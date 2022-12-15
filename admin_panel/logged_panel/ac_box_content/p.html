@@ -1,0 +1,33 @@
+<div id="ac_box_content">
+    <ul>
+        <li class="button_acb" id="_option1">Dodaj paragraf niżej</li>
+        <li class="button_acb" id="_option2">Dodaj paragraf wyżej</li>
+        <li class="button_acb" id="_option3">Usuń paragraf</li>
+        <li class="button_acb" id="_option4">Edytuj</li>
+    </ul>
+    <script type="text/javascript">
+     
+        var el = sessionStorage.getItem('paragraph_id');
+        $('#_option1').click(function(){
+            var add_par_ = new add_par();
+            add_par_.add_below($('#' + el));
+        });
+    
+        $('#_option2').click(function(){
+            var add_par_ = new add_par();
+            add_par_.add_above($('#' + el));
+        });
+    
+        $('#_option3').click(function(){
+            var add_par_ = new add_par();
+            add_par_.delete_p($('#' + el));
+        });
+    
+        $('#_option4').click(function(){
+            var add_par_ = new add_par();
+            add_par_.Edit_element($('#' + el));
+        });
+    
+    
+    </script>
+</div>

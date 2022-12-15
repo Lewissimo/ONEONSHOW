@@ -1,0 +1,32 @@
+
+    strong{
+        color: #d50819 !important;
+    }
+
+    #about-text{
+        flex: 6 0 auto;
+        font-size: 1.1em;
+    }
+    
+    #main_content{
+        margin-top: 110px;
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+
+
+    #photoBox{
+        flex: 4 4 auto;
+        max-width: 600px;
+        position: relative;
+    }
+
+
+    img{
+
+        width: 100%;
+
+    }
+    

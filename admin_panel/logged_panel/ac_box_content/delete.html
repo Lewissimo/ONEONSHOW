@@ -1,0 +1,13 @@
+
+
+<div id="ac_box_content">
+    <ul> 
+         <li id="delete_" class="button_3">--USUŃ--</li>
+    </ul>
+<script type="text/javascript">
+            $('#delete_').click(function(){
+                var position_ = which_position(sessionStorage.getItem('paragraph_id'), 'movie_box');
+                $.post('../php/delete_el.php', {position: position_}, function(){location.reload();});
+            })
+</script>
+</div>

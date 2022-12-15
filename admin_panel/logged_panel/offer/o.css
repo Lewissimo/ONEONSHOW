@@ -1,0 +1,38 @@
+#main_content{
+    margin-top: 110px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    
+}
+
+#offer-photo{
+    flex: 3;
+}
+
+#offer-text{
+    flex: 4;
+}
+
+#offer-photo img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 40px;
+    display: block;
+}
+
+#decorate{
+    text-align: center;
+}        
+
+#mobile_img{
+    margin: 20px auto;
+    width: 60%;
+    
+
+}
+
+#header_{
+    text-align: center;
+}

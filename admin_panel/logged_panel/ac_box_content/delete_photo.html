@@ -1,0 +1,13 @@
+<div id="ac_box_content">
+    <ul> 
+         <li id="delete_" class="button_3">--USUŃ--</li>
+    </ul>
+<script type="text/javascript">
+            $('#delete_').click(function(){
+                var el_path = sessionStorage.getItem('path');
+                $.post('../php/delete_photo.php', {photo_path: el_path.substring(15)}, function(){
+                    $('img[src="' + el_path + '"]').remove();
+                });
+            })
+</script>
+</div>

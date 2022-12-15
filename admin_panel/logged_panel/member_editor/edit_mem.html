@@ -1,0 +1,15 @@
+
+
+<ul id="mem_list">
+    <div id="add_button" class="button_"><img src="member_editor/plus_but.png"></div>
+    <script type="text/javascript">
+        $.post("../../contents/get_participant.php", {}, function(data){
+            var root = $('participant', data);
+            root.each(function(index){
+                $("#mem_list").append('<li id="member' + $('id',root)[index].textContent + '" class="button_ member_edit person_edit">' + $('first_name', root)[index].textContent + ' ' + $('last_name', root)[index].textContent + '</li>');
+            })
+        });
+            add_listener._click('member_edit.html', '.person_edit');
+            add_listener._click('member_add.html', '#add_button')
+    </script>
+</ul>

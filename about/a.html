@@ -1,0 +1,22 @@
+
+
+<section id="about-text" class="text">
+    
+    
+
+
+
+</section>
+
+
+<section id="photoBox" class="photoBox">
+</section>
+<script type="text/javascript">    
+     var ph_data = new photo_data(name_of_database_photo_classes.about, null, null, 'about_photo');
+     var place = new places("#about-text", "#photoBox", null);
+     var path = new pathes("contents", "about", null);
+     var element = new elements('about', {id: 'ab_text'});
+     var content_init_ = new content_init(place, path, ph_data, element);
+     content_init_.load_page();
+
+</script>

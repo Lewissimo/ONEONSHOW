@@ -1,0 +1,130 @@
+<?php
+session_start();
+if(!isset($_SESSION['logged'])){
+    header("location: ../login.php");
+    exit();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <meta name="robots" content="no-follow">
+    <link href='https://css.gg/trash.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../soc_icon/css/fontello.css">
+    <link rel="shortcut icon" href="photos/logo/logo_icon.png">
+    <link rel="preload" as="img" href="photos/home-background/backgroundOPT.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <script src="../../jquery.js" type="text/javascript"></script>
+    <script src="jquery.ndd.js"></script>
+    <script src="photo_order_ed.js"></script>
+    <link rel="stylesheet" href="events_style.css">
+    <script src="../../adding_content.js" type="text/javascript"></script>
+    <script src="../../reload.js" type="text/javascript"></script>
+    <script type="text/javascript" src="action_box.js"></script>
+    <script src="admin-panel.js" type="text/javascript"></script>
+    <script src="add_paragraph.js" type="text/javascript"></script>
+    <style id="current_style">
+
+    </style>
+    <style>
+        #main_content{
+            margin-bottom: 150px;
+        }
+    </style>
+        <script>
+            // variable is helpfull to recognize type of loading files
+            _type = 'php';
+            var add_listener = new add_events();
+        </script>
+</head>
+<body>
+    <div id="action_box">
+        <div class="off" id="action_box_off">X</div>
+
+    </div>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v15.0" nonce="arLdPCHd"></script>
+    <div id="page">
+    <nav id="main-nav">
+        <ul id="main-nav-list">
+            <li class="link" onclick="change_href('home')">Home</li>
+            <li class="link" onclick="change_href('about')">O nas</li>
+            <li class="link" onclick="change_href('offer')">Oferta</li>
+            <li class="link" onclick="change_href('media')">Media</li>
+            <li class="link" onclick="change_href('galery')">Galeria</li>
+            <li class="link" onclick="change_href('contact')">Kontakt</li>
+        </ul>
+    </nav>
+    <script src="../../script.js" type="text/javascript"></script>
+    <script src="../../load_mobile_constant_content.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var load_mobile_constant_content_ = new load_mobile_constant_content(700, '../../contents');
+        load_mobile_constant_content_.mobile_const_content_load(); 
+    </script>
+
+    <article id="main_content">
+  
+    </article>
+    <script>
+        var general_contents_path = '../../contents/';
+        var tags_array = ['home', 'about', 'offer', 'media', 'galery', 'contact'];
+        
+        var url = window.location.href;
+        
+        tags_array.forEach(element => {
+            if(url.endsWith(element)){
+                load(element,'main_content', _type);
+            }
+        });
+        
+        if(url.indexOf("#") == -1){
+            change_href('home');
+        }
+        
+
+
+    </script>
+    <img src="../../contents/general_photos/Oneon-logo-final.png" author="Justyna Michalska" id="logo">
+        <div id="admin_tools">
+            <div class="admin-panel" id="main-panel">
+                <div id="but_box">&#129089;</div>
+                <ul>
+                    <li>Zmień hasło: <form id="change_password_box"><input type="password" required placeholder="stare hasło"><input type="password" required placeholder="nowe hasło"><input type="password" required placeholder="powtórz nowe hasło"><button class="button_3">Zmień</button></form></li>
+                    <li>Zmień jasność tła <form><input class="button_" type="range" name="background_brightness" id="background_brightness"><button class="button_3">zapisz</button></form></li>
+                    <li>Zmień tło <form><label for="input-file" class="button_">Dodaj zdjęcie</label><input id="input-file" style="display: none" type="file" name="background_brightness" id="background_brightness"><button class="button_3">zapisz</button></form></li>
+                    <li class="button_" id="edit_members_">Edytuj członków grupy</li>
+                    <li class="button_" id="edit_contacts_">Edytuj dane kontaktowe</li>
+                </ul>
+            </div>
+            <table id="a_visitors_table">
+                <thead>
+                    <tr>
+                        <th>Ostatnie</th><th class="num_of_vis">24h</th><th class="num_of_vis">7 dni</th><th class="num_of_vis">miesiąc</th>
+                        <td class="button_">Dodaj paragraf na końcu</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Odwiedziny</td><td class="num_of_vis"></td><td class="num_of_vis"></td><td class="num_of_vis"></td>
+                        <td class="button_">Usuń paragraf z końca</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="member_editor">
+                <div class="off" id="member_editor_off">X</div>
+                <div id="member_list_box">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

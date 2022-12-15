@@ -1,0 +1,278 @@
+.clickable:hover{
+    box-shadow: 0 0 20px 7px black;
+    cursor: pointer;
+}
+
+.grabable:hover{
+    box-shadow: 0 0 20px 7px black;
+    cursor: grab;
+}
+
+.grabable:active{
+    cursor: grabbing;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+    border: 2px solid black;
+    margin: 20px 0;
+    resize: none;
+    background-color: rgba(0, 0, 0, 0.03);
+    color: black;
+    padding: 8px;
+}
+
+#add_button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+#add_button > img{
+    width: 30px;
+    height: 30px;
+}
+
+#member_list_box{
+    width: 70%;
+    height: 80%;
+    border: 2px solid black;
+    overflow: auto;
+    color: aliceblue;
+}
+
+#member_list_box ul{
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+#member_list_box li{
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+#action_box{
+    background-color: rgba(0, 0, 0, 0.933);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    display: none;
+    color: white;
+    padding: 10px;
+}
+
+#ac_box_content{
+    padding: 8px;
+    opacity: 0;
+}
+
+#ac_box_content > ul{
+    list-style: none;
+}
+
+#ac_box_content > ul > li{
+    text-align: center;
+    padding: 6px;
+}
+
+#ac_box_content > ul > li.button_acb:hover{
+    background-color: brown;
+    cursor: pointer;
+}
+
+
+.admin-panel{
+    background-color: rgba(0, 0, 0, 0.674);
+    color: rgb(51, 237, 51);
+    padding: 20px;
+    width: 300px;
+    overflow: auto;
+    width: 500px;
+    height: 400px;
+    position: relative;
+    transform: translateY(378px);
+    transition: all 2s;
+}
+
+.admin-panel::-webkit-scrollbar{
+    display: none;
+}
+
+.admin-panel form{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.admin-panel ul{
+    list-style: none;
+    text-align: center;
+}
+
+.admin-panel li{
+    border: 2px solid black;
+    padding: 4px;
+}
+
+.button_3{
+    background-color: black;
+    color: rgb(183, 183, 229);
+    font-weight: bold;
+    border-radius: 9px;
+    padding: 3px;
+}
+
+.button_3:hover{
+    cursor: pointer;
+    background-color: azure;
+    color: rgb(22, 22, 86);
+}
+
+.button_{
+    cursor: pointer;
+}
+
+.button_:hover{
+    color: rgb(49, 49, 160);
+    background-color: azure !important;
+}
+
+#but_box{
+    position: absolute;
+    top: 0;
+    color: white;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+#but_box:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+
+#member_editor{
+    background-color: rgba(0, 0, 0, 0.674);
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    transition: all 2s;
+    transform: translateX(105%);
+}
+
+#member_editor button{
+    max-width: 190px;
+    min-width: 110px;
+    padding: 30px;
+    cursor: pointer;
+    background-color: blue !important;
+    font-size: 1.3em;
+    border: 2px solid grey;
+}
+
+#member_editor button:hover{
+    box-shadow: 0 0 10px 10px blue;
+    color: antiquewhite;
+}
+
+#a_visitors_table{
+    text-align: center;
+    color: rgb(51, 237, 51); 
+    width: 100%;
+
+}
+
+
+#a_visitors_table td:first-child, #a_visitors_table th:first-child{
+    width: 25%;
+}
+
+.num_of_vis{
+    width: 10%;
+}
+
+#a_visitors_table td, #a_visitors_table th{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+#admin_tools{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: baseline;
+    align-content: flex-start;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    min-width: 1000px;
+    overflow: visible;
+    height: 0px;
+}
+
+.off{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(104, 76, 76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: .5em;
+    box-shadow: 0 0 2px 2px black;
+    cursor: pointer;
+}
+
+.off:hover{
+    background-color: red;
+}
+
+.textarea_acb{
+    color: aliceblue;
+    border: 2px solid white;
+}
+
+
+.movie_box{
+    padding: 20px;
+    background-color: aliceblue;
+
+    cursor: grab;
+}
+
+.movie_box:last-child{
+    display: none;
+}
+
+.movie_box:active{
+    background-color: black;
+    cursor: grabbing;
+}
+
+img:not(#logo):not(.grabable):not(.participant_photo){
+    cursor: pointer;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oneon</title>
+    <meta name="description" content="">
+    <meta name="keywards" content="">
+    <meta name="robots" content="follow">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="soc_icon/css/fontello.css">
+    <link rel="shortcut icon" href="photos/logo/logo_icon.png">
+    <link rel="preload" as="img" href="photos/home-background/backgroundOPT.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="adding_content.js" type="text/javascript"></script>
+    <script src="reload.js" type="text/javascript"></script>
+   <style id="current_style">
+      
+
+    </style>
+    <script>
+        _type = 'html';
+    </script>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v15.0" nonce="arLdPCHd"></script>
+    <div id="page">
+    <nav id="main-nav">
+        <ul id="main-nav-list">
+            <li class="link" onclick="change_href('home')">Home</li>
+            <li class="link" onclick="change_href('about')">O nas</li>
+            <li class="link" onclick="change_href('offer')">Oferta</li>
+            <li class="link" onclick="change_href('media')">Media</li>
+            <li class="link" onclick="change_href('galery')">Galeria</li>
+            <li class="link" onclick="change_href('contact')">Kontakt</li>
+        </ul>
+    </nav>
+    <script src="script.js" type="text/javascript"></script>
+    <script src="load_mobile_constant_content.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var load_mobile_constant_content_ = new load_mobile_constant_content();
+        load_mobile_constant_content_.mobile_const_content_load(); 
+    </script>
+    <div id="_media_contact">
+        <ul id="list_media-con">
+            <li>
+                <div class="con_option_package">
+                    <table>
+                        <tr id="media_contact_place">
+                            <td>
+                                <i class="icon-phone"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <div class="con_option_package" style="overflow: auto;">
+                    <table>
+                        <tr id="fb_place">
+                           
+                        </tr>
+                    </table>
+            </li>
+            <li>
+                <div class="con_option_package" id="mail_box">
+                    <table>
+                        <tr>
+                            <td>
+                                <i class="icon-mail"></i>
+                            </td>
+                            <td id="mail_place">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <article id="main_content">
+        
+    </article>
+    <script>
+        var tags_array = ['home', 'about', 'offer', 'media', 'galery', 'contact'];
+        
+        var url = window.location.href;
+        
+        tags_array.forEach(element => {
+            if(url.endsWith(element)){
+                load(element,'main_content', _type);
+            }
+        });
+        
+        if(url.indexOf("#") == -1){
+            change_href('home');
+        }
+        $.post("contents/get_contact.php", {}, function(data){
+            var root = $("contact", data);
+            root.each(function(index, data){
+                $("#media_contact_place").append("<td><a href='tel:" + $("phone", root)[index].textContent + "'>" + $("name", root)[index].textContent + "<br>" + $("representative_phone", root)[index].textContent) + "</a></td>";
+            });
+        });
+
+        $.post("contents/get_general_contact.php", {}, function(data){
+            var root = $("link", data);
+                $("#fb_place").append("<td><a href='" + $("path", root)[0].textContent + "' target='_blank'><i class='icon-facebook'></i></a></td>");
+                $("#fb_place").append('<td><div class="fb-page" data-href="' + $('path', root)[0].textContent + '" data-tabs="timeline" data-width="240" data-height="70" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="' + $('path', root)[0].textContent + '"class="fb-xfbml-parse-ignore "><a href=' + $('path', root)[0].textContent + '">OneOn</a></blockquote></div></td>');
+                $("#mail_place").append('<a href="mailto:' + $('path', root)[1].textContent + '">' + $('path', root)[1].textContent + '</a>');
+        
+        
+        });
+
+
+    </script>
+    <img src="contents/general_photos/Oneon-logo-final.png" author="Justyna Michalska" id="logo">
+    </div>
+
+
+</body>
+</html>

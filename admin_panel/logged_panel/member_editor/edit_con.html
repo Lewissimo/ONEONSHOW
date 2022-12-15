@@ -1,0 +1,17 @@
+<ul id="mem_list">
+    <li id="gen_con_edit" class="button_ member_edit">Edytuj generalne dane kontaktowe</li>
+    <div id="add_button" class="button_"><img src="member_editor/plus_but.png"></div>
+    <script type="text/javascript">
+        $.post("../../contents/get_contact.php", {}, function(data){
+            var root = $('contact', data);
+            root.each(function(index){
+                $("#mem_list").append('<li id="contact_member' + $('id',root)[index].textContent + '" class="button_ member_edit person_edit">' + $('name', root)[index].textContent + '</li>');
+            })
+        });
+        
+            add_listener._click('contact_data.html', '.person_edit');
+            add_listener._click('general_con.html', '#gen_con_edit');
+            add_listener._click('contact_add.html', '#add_button');
+    
+    </script>
+</ul>

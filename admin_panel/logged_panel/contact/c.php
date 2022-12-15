@@ -1,0 +1,13 @@
+<section id="contact-box">    
+</section>
+<section id="contact-photo">
+</section>
+
+<script>
+    var ph_data = new photo_data(name_of_database_photo_classes.contact, null, null, 'contact_photo');
+    var place = new places("#contact-box", "#contact-photo", null);
+    var path = new pathes("../../contents", null, null);
+    var element = new elements('contact', null);
+    var content_init_ = new content_init(place, path, ph_data, element);
+    content_init_.load_page();
+</script>
